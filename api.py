@@ -26,6 +26,21 @@ else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fqcszrswqryaeo:53b0edd7994a3917ffa91772bf0414d1737cc957b5cdbc8e599ea396de39445d@ec2-23-22-191-232.compute-1.amazonaws.com:5432/d7r1gus2rj04tk'
     app.debug = False
 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    public_id = db.Column(db.String(50), unique=True)
+    name = db.Column(db.String(50))
+    password = db.Column(db.String(80))
+
+class Message(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    senderId = db.Column(db.String(50))
+    reciverId = db.Column(db.String(50))
+    subject = db.Column(db.String(50))
+    message = db.Column(db.Text())
+    date = db.Column(db.String(50))
+    isOpend = db.Column(db.Boolean) 
+    
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
