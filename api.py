@@ -57,6 +57,10 @@ def token_required(f):
 
     return decorated  
 
+@app.route('/')
+def home():
+    return jsonify({'message' : 'Please use postman to intercat with this api'})
+
 @app.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
@@ -82,10 +86,6 @@ def login():
         token = jwt.encode({'public_id' : user.public_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(minutes=60)}, app.config['SECRET_KEY'])
         return jsonify({'token' : token.decode('UTF-8')})
     return make_response('Could not verify', 401, {'WWW-Authenticate' : 'Basic realm="Login required!"'})
-
-@app.route('/')
-def home():
-    return jsonify({'Please use postman to intercat with this api'})
 
 @app.route('/users')
 def getAllUsers():
