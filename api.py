@@ -13,7 +13,6 @@ app = Flask(__name__)
 
 file_path = os.path.abspath(os.getcwd())
 app.config['SECRET_KEY'] = 'secret'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path + '/user_msg.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -21,8 +20,10 @@ db = SQLAlchemy(app)
 ENV = 'prod'
 
 if ENV == 'dev':
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path + '/user_msg.db'
     app.debug = True
 else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://fqcszrswqryaeo:53b0edd7994a3917ffa91772bf0414d1737cc957b5cdbc8e599ea396de39445d@ec2-23-22-191-232.compute-1.amazonaws.com:5432/d7r1gus2rj04tk'
     app.debug = False
 
 def token_required(f):
