@@ -18,6 +18,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+ENV = 'prod'
+
+if ENV == 'dev':
+    app.debug = True
+else:
+    app.debug = False
+
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -198,4 +205,4 @@ def deleteAllMessages():
     return jsonify({'message' : 'messages deleted!'}) 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
