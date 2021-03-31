@@ -60,12 +60,10 @@ def token_required(f):
 
 @app.route('/login')
 def register():
-    # data = request.get_json()
-    # hashed_password = generate_password_hash(data['password'], method='sha256')
-    # new_user = User(public_id=str(uuid.uuid4()), name=data['name'], password=hashed_password)
-    # db.session.add(new_user)
-    # db.session.commit()
-    return jsonify({'message' : 'Welcome {0} you have successfully registered!'})    
+    new_user = User(public_id=str(uuid.uuid4()), name='daniel', password='123')
+    db.session.add(new_user)
+    db.session.commit()
+    return jsonify({'message' : 'Welcome you have successfully registered!'})    
 # @app.route('/register', methods=['POST'])
 # def register():
 #     data = request.get_json()
