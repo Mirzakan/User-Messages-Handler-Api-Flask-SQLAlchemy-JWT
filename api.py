@@ -23,7 +23,7 @@ db = SQLAlchemy(app)
 #     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path + '/user_msg.db'
 #     app.debug = True
 # else:
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fqcszrswqryaeo:53b0edd7994a3917ffa91772bf0414d1737cc957b5cdbc8e599ea396de39445d@ec2-23-22-191-232.compute-1.amazonaws.com:5432/d7r1gus2rj04tk'
+app.config['SQLAlchemy_DATABASE_URI'] = 'postgresql://fqcszrswqryaeo:53b0edd7994a3917ffa91772bf0414d1737cc957b5cdbc8e599ea396de39445d@ec2-23-22-191-232.compute-1.amazonaws.com:5432/d7r1gus2rj04tk'
 app.debug = False
 
 class User(db.Model):
