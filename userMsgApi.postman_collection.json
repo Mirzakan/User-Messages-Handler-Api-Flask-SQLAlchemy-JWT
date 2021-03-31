@@ -26,15 +26,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/register",
-					"protocol": "http",
+					"raw": "https://user1message1handler.herokuapp.com/register",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"user1message1handler",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"register"
 					]
@@ -53,12 +51,12 @@
 					"basic": [
 						{
 							"key": "username",
-							"value": "Daniel",
+							"value": "daniel",
 							"type": "string"
 						},
 						{
 							"key": "password",
-							"value": "1234",
+							"value": "123",
 							"type": "string"
 						}
 					]
@@ -81,15 +79,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/login",
-					"protocol": "http",
+					"raw": "https://user1message1handler.herokuapp.com/login",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"user1message1handler",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"login"
 					]
@@ -119,24 +115,22 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0NjA2YzgxMS1kYjU3LTQzOTItOWFlOS0wNTI2NGY4OGQxZTIiLCJleHAiOjE2MTcyMDk2NDB9.OiFF7NnYYONyt7siN4JhyqHlDpa5KD5G6MsrnNZmHqA",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiIzYmZlYzk1OS0xZjYxLTRmMWItODQ4Ni0wOTE0NzIzNzk3ZmMiLCJleHAiOjE2MTcyMjI2MjN9.4Rrvm88-QVQP2H5xCJqFHJUD4fgE4zen0K2t6EGNUWc",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"reciver\":\"daniel\",\r\n    \"subject\":\"Heyyy its me gabi\",\r\n    \"message\":\"check\"\r\n}"
+					"raw": "{\r\n    \"reciver\":\"gabriel\",\r\n    \"subject\":\"Heyyy its me yael\",\r\n    \"message\":\"check\"\r\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/writemsg",
-					"protocol": "http",
+					"raw": "https://user1message1handler.herokuapp.com/writemsg",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"user1message1handler",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"writemsg"
 					]
@@ -159,7 +153,7 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0NjA2YzgxMS1kYjU3LTQzOTItOWFlOS0wNTI2NGY4OGQxZTIiLCJleHAiOjE2MTcyMDgwNjJ9.mXEWtY5nwBFN8SKOzAQ4SGeeDlwPZjXeM8YX68bwBXI",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0ZmM4YmIwYi1lMDM5LTRmNmQtYWM2Zi1lN2Y3MjA0MTkxYTUiLCJleHAiOjE2MTcyMjI0Mzh9.UdZFuS92WusKdxPNcgBeavBjpU_SgouzHsTvt7qKxCI",
 						"type": "text"
 					}
 				],
@@ -168,15 +162,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/messages",
-					"protocol": "http",
+					"raw": "https://user1message1handler.herokuapp.com/messages",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"user1message1handler",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"messages"
 					]
@@ -327,7 +319,7 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJjOTVhM2ViMy1iZTYwLTQzYjUtYTI1YS1lMTc0NTM5YWM3ZjgiLCJleHAiOjE2MTcxOTA5NjV9.Yy2FMKJnYLDIYL3zAIRVIEMreZm2Oq6Vn_TdJoNdSSQ",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI3NTU0N2VmNy1jNTQxLTQyOTItYTk5MS1jMWNiNzcxZjcwMDgiLCJleHAiOjE2MTcxOTg3MjF9.MO2_aOWfBAjue66Qn00UpPgDyd0fzWGImiJEh3yWndw",
 						"type": "text"
 					}
 				],
@@ -336,17 +328,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/user",
-					"protocol": "http",
+					"raw": "https://user1message1handler.herokuapp.com/users",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"user1message1handler",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
-						"user"
+						"users"
 					]
 				}
 			},
@@ -447,15 +437,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/messages",
-					"protocol": "http",
+					"raw": "https://user1message1handler.herokuapp.com/messages",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"user1message1handler",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"messages"
 					]

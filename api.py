@@ -16,15 +16,15 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# ENV = 'prod'
+ENV = 'prod'
 
-# if ENV == 'dev':
-#     file_path = os.path.abspath(os.getcwd())
-#     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path + '/user_msg.db'
-#     app.debug = True
-# else: 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://jhzaxoxzuzuxdy:d0cd2b0988ca56e318e97586e7500af9330c1fac790dccb7f5dde23a37b62920@ec2-52-45-73-150.compute-1.amazonaws.com:5432/darptf7birrrs7'
-app.debug = False
+if ENV == 'dev':
+    file_path = os.path.abspath(os.getcwd())
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path + '/user_msg.db'
+    app.debug = True
+else: 
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://jhzaxoxzuzuxdy:d0cd2b0988ca56e318e97586e7500af9330c1fac790dccb7f5dde23a37b62920@ec2-52-45-73-150.compute-1.amazonaws.com:5432/darptf7birrrs7'
+    app.debug = False
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -56,18 +56,15 @@ def token_required(f):
             return jsonify({'message' : 'Token is invalid!'}), 401
         return f(current_user, *args, **kwargs)
 
-    return decorated
-
-# @app.route('/login')
-# def register():
-#     new_user = User(public_id='s', name='daniel', password='123')
-#     db.session.add(new_user)
-#     db.session.commit()
-#     return jsonify({'message' : 'Welcome you have successfully registered!'})    
+    return decorated  
 
 @app.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
+    #check if user name exists already should be uniq
+    userExists = User.query.filter_by(name=data['name']).first()
+    if userExists: 
+        return jsonify({'message' : 'User name {0} is already exists try another one!'.format(data['name'])}) 
     hashed_password = generate_password_hash(data['password'], method='sha256')
     new_user = User(public_id=str(uuid.uuid4()), name=data['name'], password=hashed_password)
     db.session.add(new_user)
