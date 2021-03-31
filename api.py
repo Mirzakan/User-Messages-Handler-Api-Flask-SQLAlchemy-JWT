@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import *
 import jwt
 import datetime
 from functools import wraps
