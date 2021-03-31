@@ -60,7 +60,7 @@ def token_required(f):
 
 @app.route('/login')
 def register():
-    new_user = User(public_id=str(uuid.uuid4()), name='daniel', password='123')
+    new_user = User(public_id='s', name='daniel', password='123')
     db.session.add(new_user)
     db.session.commit()
     return jsonify({'message' : 'Welcome you have successfully registered!'})    
