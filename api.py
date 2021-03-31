@@ -83,6 +83,10 @@ def login():
         return jsonify({'token' : token.decode('UTF-8')})
     return make_response('Could not verify', 401, {'WWW-Authenticate' : 'Basic realm="Login required!"'})
 
+@app.route('/')
+def home():
+    return jsonify({'Please use postman to intercat with this api'})
+
 @app.route('/users')
 def getAllUsers():
     users = User.query.all()
@@ -213,7 +217,7 @@ def deleteMessage(current_user):
 
 @app.route('/messages', methods=['DELETE'])
 @token_required
-def deleteAllMessages():
+def deleteAllMessages(current_user):
     if not current_user:
         return jsonify({'message' : 'you are not logged in (use provided token when signinup)'})
     messages = Message.query.all()
