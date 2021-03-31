@@ -11,7 +11,6 @@ from sqlalchemy.orm.attributes import flag_modified
 
 app = Flask(__name__)
 
-file_path = os.path.abspath(os.getcwd())
 app.config['SECRET_KEY'] = 'secret'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -20,6 +19,7 @@ db = SQLAlchemy(app)
 ENV = 'prod'
 
 if ENV == 'dev':
+    file_path = os.path.abspath(os.getcwd())
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path + '/user_msg.db'
     app.debug = True
 else:
@@ -40,7 +40,7 @@ class Message(db.Model):
     message = db.Column(db.Text())
     date = db.Column(db.String(50))
     isOpend = db.Column(db.Boolean) 
-    
+
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
